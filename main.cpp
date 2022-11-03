@@ -10,9 +10,9 @@
 #define INDEX_GROUP_QNT 2
 #define ID_INDEX_KEY_SIZE 6
 #define ORDER_ID_KEY_SIZE 9
-#define MAX_ADDRESSES_PER_NODE 100
+#define MAX_ADDRESSES_PER_NODE 2500
 
-#define CREATE_INDEXES 0
+#define CREATE_INDEXES 1
 
 /*
  * 0 - indice linked list em memoria, busca por prioridade
@@ -21,7 +21,7 @@
  * 3 - indice em arquivo, busca por id do pedido
  * */
 
-#define MENU 0
+#define MENU 6
 
 typedef struct reg {
     char region[29];
@@ -251,6 +251,7 @@ void data_txt_line_to_struct(char line[DATA_LINE_SIZE], DATA_REG* r) {
 
 void create_data_file()
 {
+	printf("#### CRIANDO ARQUIVO DE DADOS ####\n\n");
     FILE* f_csv = fopen("sales.csv", "rt");
     FILE* f_data = fopen("data.txt", "wt");
 
@@ -278,6 +279,8 @@ void create_data_file()
 }
 
 void create_order_id_index_file() {
+	printf("#### CRIANDO ARQUIVO DE INDICE NA CHAVE ORDER_ID ####\n\n");
+	
     FILE* f_data = fopen("data.txt", "rt");
     FILE* f_index = fopen("order_id_index.txt", "w+t");
 
@@ -313,6 +316,8 @@ void create_order_id_index_file() {
 }
 
 void create_id_index_file() {
+	printf("#### CRIANDO ARQUIVO DE INDICE NA CHAVE ID ####\n\n");
+	
     FILE* f_data = fopen("data.txt", "rt");
     FILE* f_index = fopen("id_index.txt", "w+t");
 
@@ -723,6 +728,8 @@ int main() {
         data_binary_search_by_id_index(6);
         data_binary_search_by_id_index(7);
         data_binary_search_by_id_index(8);
+        data_binary_search_by_id_index(29);
+        data_binary_search_by_id_index(30);
 
         data_binary_search_by_id_index(9);
         data_binary_search_by_id_index(123);
