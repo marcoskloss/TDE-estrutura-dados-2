@@ -1,0 +1,8 @@
+000001,Australia and Oceania       ,Office Supplies,Online ,H,20160306,517073523,0303126.25
+000002,Europe                      ,Beverages      ,Online ,L,20100418,380507028,0146264.41
+000003,North America               ,Cereal         ,Online ,M,20150108,504055583,0009124.77
+000004,Europe                      ,Snacks         ,Online ,C,20140119,954955518,0077967.96
+000005,Middle East and North Africa,Cereal         ,Offline,H,20190426,970755660,0622521.94
+000006,Sub-Saharan Africa          ,Office Supplies,Online ,C,20120303,309317338,0344536.25
+000007,Europe                      ,Personal Care  ,Online ,H,20121124,598814380,0033505.22
+000008,Middle East and North Africa,Cosmetics      ,Offline,M,20110318,387733113,1338625.13
