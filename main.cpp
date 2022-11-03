@@ -12,16 +12,7 @@
 #define ORDER_ID_KEY_SIZE 9
 #define MAX_ADDRESSES_PER_NODE 2500
 
-#define CREATE_INDEXES 1
-
-/*
- * 0 - indice linked list em memoria, busca por prioridade
- * 1 - indice tree em memoria, busca por data
- * 2 - indice em arquivo esparso, busca por id
- * 3 - indice em arquivo, busca por id do pedido
- * */
-
-#define MENU 6
+#define CREATE_INDEXES 0
 
 typedef struct reg {
     char region[29];
@@ -680,6 +671,16 @@ void data_search_linked_list_index(char priority, IDX_LINKED_LIST_NODE* root) {
 }
 
 int main() {
+		
+	/*
+	 * 0 - indice linked list em memoria, busca por prioridade
+	 * 1 - indice tree em memoria, busca por data
+	 * 2 - indice em arquivo esparso, busca por id
+	 * 3 - indice em arquivo, busca por id do pedido
+	 * */
+
+	int MENU = 0;
+	
     if (CREATE_INDEXES) {
         create_data_file();
         create_id_index_file();
@@ -730,11 +731,15 @@ int main() {
         data_binary_search_by_id_index(8);
         data_binary_search_by_id_index(29);
         data_binary_search_by_id_index(30);
-
         data_binary_search_by_id_index(9);
         data_binary_search_by_id_index(123);
         data_binary_search_by_id_index(933);
-        data_binary_search_by_id_index(129);
+        data_binary_search_by_id_index(9999);
+        data_binary_search_by_id_index(10000);
+        
+        data_binary_search_by_id_index(10001);
+        data_binary_search_by_id_index(10003);
+        data_binary_search_by_id_index(10004);
     }
 
     if (MENU == 3) {
@@ -745,7 +750,9 @@ int main() {
         data_search_by_order_id_index(598814380);
         data_search_by_order_id_index(954955518);
         data_search_by_order_id_index(970755660);
-
+	data_search_by_order_id_index(999787032);
+		
+	data_search_by_order_id_index(999345433); /* BUG */
         data_search_by_order_id_index(421321);
         data_search_by_order_id_index(123123);
     }
